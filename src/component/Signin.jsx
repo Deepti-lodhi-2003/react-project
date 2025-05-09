@@ -6,9 +6,9 @@ const Signin = (props) => {
     const {toggler, setToggler } = props;
   return (
     <div>
-         <form  className='w-[90%] sm:w-[60%] md:w-[40%] mx-auto mt-10 bg-white shadow-2xl p-6 rounded-md shadow-md'
+         <form  className='w-[90%] sm:w-[60%] md:w-[40%] mx-auto mt-10 bg-gray-800 text-white shadow-2xl p-6 rounded-md shadow-md'
         autoComplete="off">
-          <h2 className='text-2xl font-semibold mb-4 text-center'>Sign In</h2>
+          <h2 className='text-2xl font-semibold mb-4 text-center'>Get back to your journey</h2>
 
           <input
           type="email"
@@ -27,19 +27,19 @@ const Signin = (props) => {
 
           <button
           type="submit"
-          className="w-full bg-gray-700 text-white py-3 mt-6 rounded-md hover:bg-blue-700 transition-all"
+          className="w-full bg-blue-500 text-white py-3 mt-6 rounded-md hover:bg-blue-800 transition-all"
         >
             Login
         </button>
 
         <div className="mt-4 text-sm text-center">
-          Already have an account?{" "}
+          Don't have an account?{" "}
           <button
             type="button"
             onClick={() => setToggler(!toggler)}
-            className="text-blue-600 font-medium underline"
+            className="text-blue-400 font-medium underline"
           >
-            Signin
+            Signup
           </button>
         </div>
         </form>

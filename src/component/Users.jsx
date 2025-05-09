@@ -1,26 +1,42 @@
 import React from 'react'
 
-const Users = () => {
+const Users = (props) => {
+  const {users, setUsers} = props;
+  
+
+  const deleteHandler = (id) => {
+    const copyusers = [...users];
+    const filteredUsers = copyusers.filter((user) => user.id !== id);
+    setUsers(filteredUsers);
+  }
+
+  const userlist = users.map((user) => {
   return (
-    <ul className='w-[30%]'>
-
-       <li className=' flex item-center justify-between bg-gray-700 text-white shadow-lg rounded p-2 font-thin mb-3'>
+  
+    <li 
+    key ={user.id}
+     className=' flex item-center justify-between bg-gray-700 text-white shadow-lg rounded p-2 font-thin mb-3'>
         <p>
-        <span className='block text-xl mb-1'>User name</span>
-        <small className='text-sm'>user@gmail.com</small>
+        <span className='block text-xl mb-1'>{user.name}</span>
+        <small className='text-sm'>{user.email}</small>
         </p>
-        <span className='hover:cursor-pointer font-normal text-red-500'>Delete</span>
+        <span
+        onClick={() => deleteHandler(user.id)}
+         className='hover:cursor-pointer font-normal text-red-500'>Delete</span>
        </li>
 
-       <li className=' flex item-center justify-between bg-gray-700 text-white shadow-lg rounded p-2 font-thin mb-3'>
-        <p>
-        <span className='block text-xl mb-1'>User name</span>
-        <small className='text-sm'>user@gmail.com</small>
-        </p>
-        <span className='hover:cursor-pointer font-normal text-red-500'>Delete</span>
-       </li>
-       
-    </ul>
+  )
+})
+
+  
+  return(
+  <ul className='w-[30%]'>
+  {users.length != 0 ? 
+    userlist 
+    : (
+    <h1 className='text-center text-2xl font-semibold'>No users found</h1>
+  )}
+  </ul>
   )
 }
 export default Users

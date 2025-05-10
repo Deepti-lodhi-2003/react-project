@@ -2,6 +2,7 @@
   "name": "react-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://deepti-lodhi-2003.github.io/react-project/",
   "type": "module",
   "scripts": {
     "dev": "vite",
